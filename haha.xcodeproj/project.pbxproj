@@ -21,6 +21,7 @@
 		F1F4BC02191D049100F0A3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F4BBE4191D049000F0A3E2 /* UIKit.framework */; };
 		F1F4BC0A191D049100F0A3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1F4BC08191D049100F0A3E2 /* InfoPlist.strings */; };
 		F1F4BC0C191D049100F0A3E2 /* hahaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F4BC0B191D049100F0A3E2 /* hahaTests.m */; };
+		F1F4BC19191D0D5500F0A3E2 /* haImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F4BC18191D0D5500F0A3E2 /* haImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F1F4BC07191D049100F0A3E2 /* hahaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hahaTests-Info.plist"; sourceTree = "<group>"; };
 		F1F4BC09191D049100F0A3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1F4BC0B191D049100F0A3E2 /* hahaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hahaTests.m; sourceTree = "<group>"; };
+		F1F4BC17191D0D5500F0A3E2 /* haImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = haImageView.h; sourceTree = "<group>"; };
+		F1F4BC18191D0D5500F0A3E2 /* haImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = haImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +115,11 @@
 		F1F4BBE6191D049000F0A3E2 /* haha */ = {
 			isa = PBXGroup;
 			children = (
-				F1F4BBEF191D049100F0A3E2 /* haAppDelegate.h */,
-				F1F4BBF0191D049100F0A3E2 /* haAppDelegate.m */,
 				F1F4BBF2191D049100F0A3E2 /* Main.storyboard */,
 				F1F4BBF5191D049100F0A3E2 /* haViewController.h */,
 				F1F4BBF6191D049100F0A3E2 /* haViewController.m */,
+				F1F4BC17191D0D5500F0A3E2 /* haImageView.h */,
+				F1F4BC18191D0D5500F0A3E2 /* haImageView.m */,
 				F1F4BBF8191D049100F0A3E2 /* Images.xcassets */,
 				F1F4BBE7191D049000F0A3E2 /* Supporting Files */,
 			);
@@ -126,6 +129,8 @@
 		F1F4BBE7191D049000F0A3E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1F4BBEF191D049100F0A3E2 /* haAppDelegate.h */,
+				F1F4BBF0191D049100F0A3E2 /* haAppDelegate.m */,
 				F1F4BBE8191D049000F0A3E2 /* haha-Info.plist */,
 				F1F4BBE9191D049000F0A3E2 /* InfoPlist.strings */,
 				F1F4BBEC191D049100F0A3E2 /* main.m */,
@@ -253,6 +258,7 @@
 				F1F4BBF7191D049100F0A3E2 /* haViewController.m in Sources */,
 				F1F4BBED191D049100F0A3E2 /* main.m in Sources */,
 				F1F4BBF1191D049100F0A3E2 /* haAppDelegate.m in Sources */,
+				F1F4BC19191D0D5500F0A3E2 /* haImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +463,7 @@
 				F1F4BC11191D049100F0A3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1F4BC12191D049100F0A3E2 /* Build configuration list for PBXNativeTarget "hahaTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				F1F4BC14191D049100F0A3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
