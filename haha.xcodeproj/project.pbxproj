@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10DDC42191DC93C009B54DD /* Glass Break.aiff in Resources */ = {isa = PBXBuildFile; fileRef = F10DDC41191DC93C009B54DD /* Glass Break.aiff */; };
 		F1F4BBE1191D049000F0A3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F4BBE0191D049000F0A3E2 /* Foundation.framework */; };
 		F1F4BBE3191D049000F0A3E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F4BBE2191D049000F0A3E2 /* CoreGraphics.framework */; };
 		F1F4BBE5191D049000F0A3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F4BBE4191D049000F0A3E2 /* UIKit.framework */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F10DDC41191DC93C009B54DD /* Glass Break.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "Glass Break.aiff"; sourceTree = "<group>"; };
+		F10DDC43191DC946009B54DD /* Evil_Laugh.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Evil_Laugh.aiff; sourceTree = "<group>"; };
+		F10DDC44191DC967009B54DD /* Car_Crash.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Car_Crash.aiff; sourceTree = "<group>"; };
 		F1F4BBDD191D049000F0A3E2 /* haha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F4BBE0191D049000F0A3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1F4BBE2191D049000F0A3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +137,9 @@
 				F1F4BBF0191D049100F0A3E2 /* haAppDelegate.m */,
 				F1F4BBE8191D049000F0A3E2 /* haha-Info.plist */,
 				F1F4BBE9191D049000F0A3E2 /* InfoPlist.strings */,
+				F10DDC44191DC967009B54DD /* Car_Crash.aiff */,
+				F10DDC43191DC946009B54DD /* Evil_Laugh.aiff */,
+				F10DDC41191DC93C009B54DD /* Glass Break.aiff */,
 				F1F4BBEC191D049100F0A3E2 /* main.m */,
 				F1F4BBEE191D049100F0A3E2 /* haha-Prefix.pch */,
 			);
@@ -237,6 +244,7 @@
 				F1F4BBF9191D049100F0A3E2 /* Images.xcassets in Resources */,
 				F1F4BBEB191D049000F0A3E2 /* InfoPlist.strings in Resources */,
 				F1F4BBF4191D049100F0A3E2 /* Main.storyboard in Resources */,
+				F10DDC42191DC93C009B54DD /* Glass Break.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

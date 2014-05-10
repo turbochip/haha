@@ -7,21 +7,30 @@
 //
 
 #import "haImageView.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface haImageView ()
 @property (nonatomic,strong) UIView* soldView;
 @property (nonatomic,strong) UIImageView* soldImgView;
 @property (nonatomic) UIDynamicAnimator *animator;
 @property (nonatomic) UIGravityBehavior *gravity;
+@property (nonatomic) UICollisionBehavior *collision;
 @property (nonatomic) CGAffineTransform totalTransform;
+@property (nonatomic,strong) NSURL *soundURL;
+@property (nonatomic,strong) AVAudioPlayer *crash;
 @end
 
 @implementation haImageView
 
 - (id)initWithFrame:(CGRect)frame
 {
+    NSBundle *test;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        test=[NSBundle mainBundle];
+        self.soundURL=[[NSBundle mainBundle] URLForResource:@"Car_Crash" withExtension:@"aiff"];
+        self.crash = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundURL error:nil];
     }
     return self;
 }
@@ -55,6 +64,15 @@
     return _soldImgView;
 }
 
+- (UICollisionBehavior *) collision
+{
+    if(!_collision) {
+        _collision=[[UICollisionBehavior alloc] init];
+        [self.animator addBehavior:_collision];
+    }
+    return _collision;
+}
+
 - (UIGravityBehavior *) gravity
 {
     if(!_gravity) {
@@ -82,25 +100,27 @@
         self.soldImgView.image=soldImg;
         [self addSubview:self.soldView];
         [self.soldView addSubview:self.soldImgView];
-        [UIView animateWithDuration:1.0 delay:1 options: UIViewAnimationOptionTransitionNone animations:^{
-            self.soldView.frame=CGRectMake(0, 0, 100, 100);
-        }
-                         completion:^(BOOL end) {}];
-        
-       // NSInteger delay=5;
-        for (NSInteger delay=5;delay>0;delay--){
-            [UIView animateWithDuration:2 delay:delay options:UIViewAnimationOptionTransitionNone animations:^{
+        [UIView animateWithDuration:1.0 delay:0 options: UIViewAnimationOptionTransitionNone animations:^{
+            self.soldView.frame=CGRectMake(50, 6, 100, 100);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
                 self.totalTransform=CGAffineTransformMakeRotation(M_PI/4);
+                [UIView setAnimationRepeatCount:3.5];
                 [self.soldView setTransform:self.totalTransform];
-            }
-            completion:^(BOOL end) {
-            [UIView animateWithDuration:2 delay:delay options:UIViewAnimationOptionTransitionNone animations:^{
-                self.totalTransform=CGAffineTransformRotate(self.totalTransform, -M_PI/4);
-                [self.soldView setTransform:self.totalTransform];
-            }
-            completion:^(BOOL end) {}];
-                             }];
-        }
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+                    self.totalTransform=CGAffineTransformMakeRotation(M_PI/7);
+                    [self.soldView setTransform:self.totalTransform];
+                }completion:^(BOOL finished) {
+                    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+                        self.soldView.frame=CGRectMake(50, 245,100, 100);
+                        [self.crash play];
+                        [self.soldView setTransform:self.totalTransform];
+                    } completion:nil];
+                }];
+            }];
+        [self.soldView setTransform:self.totalTransform];
+        }];
     }
     else{
         [self.soldView removeFromSuperview];
