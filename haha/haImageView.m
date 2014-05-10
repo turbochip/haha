@@ -16,7 +16,6 @@
 @property (nonatomic) UIGravityBehavior *gravity;
 @property (nonatomic) UICollisionBehavior *collision;
 @property (nonatomic) CGAffineTransform totalTransform;
-@property (nonatomic,strong) NSURL *soundURL;
 @property (nonatomic,strong) AVAudioPlayer *crash;
 @end
 
@@ -29,8 +28,11 @@
     if (self) {
         // Initialization code
         test=[NSBundle mainBundle];
-        self.soundURL=[[NSBundle mainBundle] URLForResource:@"Car_Crash" withExtension:@"aiff"];
-        self.crash = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundURL error:nil];
+        NSString *soundPath=[[NSBundle mainBundle] pathForResource:@"Car_Crash" ofType:@"aiff"];
+        NSURL *soundURL = [[NSURL alloc] initFileURLWithPath:soundPath];
+        self.crash = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+        BOOL soundStatus=[self.crash prepareToPlay];
+        NSLog(@"soundStatus=%d",soundStatus);
     }
     return self;
 }
