@@ -24,6 +24,7 @@
 		F1F4BC0A191D049100F0A3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1F4BC08191D049100F0A3E2 /* InfoPlist.strings */; };
 		F1F4BC0C191D049100F0A3E2 /* hahaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F4BC0B191D049100F0A3E2 /* hahaTests.m */; };
 		F1F4BC19191D0D5500F0A3E2 /* haImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F4BC18191D0D5500F0A3E2 /* haImageView.m */; };
+		F1FC1538191EFB2B00D71061 /* door.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1FC1537191EFB2B00D71061 /* door.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		F1482B91191EBC7400B835D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		F1482BA8191EC2CE00B835D9 /* Car_Crash.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Car_Crash.aiff; path = haha/Car_Crash.aiff; sourceTree = "<group>"; };
+		F1482BA8191EC2CE00B835D9 /* Car_Crash.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Car_Crash.aiff; sourceTree = "<group>"; };
 		F1F4BBDD191D049000F0A3E2 /* haha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F4BBE0191D049000F0A3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1F4BBE2191D049000F0A3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +61,7 @@
 		F1F4BC0B191D049100F0A3E2 /* hahaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hahaTests.m; sourceTree = "<group>"; };
 		F1F4BC17191D0D5500F0A3E2 /* haImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = haImageView.h; sourceTree = "<group>"; };
 		F1F4BC18191D0D5500F0A3E2 /* haImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = haImageView.m; sourceTree = "<group>"; };
+		F1FC1537191EFB2B00D71061 /* door.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = door.wav; path = ../door.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,6 @@
 		F1F4BBD4191D049000F0A3E2 = {
 			isa = PBXGroup;
 			children = (
-				F1482BA8191EC2CE00B835D9 /* Car_Crash.aiff */,
 				F1F4BBE6191D049000F0A3E2 /* haha */,
 				F1F4BC05191D049100F0A3E2 /* hahaTests */,
 				F1F4BBDF191D049000F0A3E2 /* Frameworks */,
@@ -136,6 +137,8 @@
 		F1F4BBE7191D049000F0A3E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1FC1537191EFB2B00D71061 /* door.wav */,
+				F1482BA8191EC2CE00B835D9 /* Car_Crash.aiff */,
 				F1F4BBEF191D049100F0A3E2 /* haAppDelegate.h */,
 				F1F4BBF0191D049100F0A3E2 /* haAppDelegate.m */,
 				F1F4BBE8191D049000F0A3E2 /* haha-Info.plist */,
@@ -244,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FC1538191EFB2B00D71061 /* door.wav in Resources */,
 				F1482BA9191EC2CE00B835D9 /* Car_Crash.aiff in Resources */,
 				F1F4BBF9191D049100F0A3E2 /* Images.xcassets in Resources */,
 				F1F4BBEB191D049000F0A3E2 /* InfoPlist.strings in Resources */,

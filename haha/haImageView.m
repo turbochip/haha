@@ -17,6 +17,7 @@
 @property (nonatomic) UICollisionBehavior *collision;
 @property (nonatomic) CGAffineTransform totalTransform;
 @property (nonatomic,strong) AVAudioPlayer *crash;
+@property (nonatomic,strong) AVAudioPlayer *door;
 @end
 
 @implementation haImageView
@@ -28,13 +29,27 @@
     if (self) {
         // Initialization code
         test=[NSBundle mainBundle];
-        NSString *soundPath=[[NSBundle mainBundle] pathForResource:@"Car_Crash" ofType:@"aiff"];
-        NSURL *soundURL = [[NSURL alloc] initFileURLWithPath:soundPath];
-        self.crash = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
-        BOOL soundStatus=[self.crash prepareToPlay];
-        NSLog(@"soundStatus=%d",soundStatus);
+        [self loadSounds];
     }
     return self;
+}
+
+- (void) loadSounds
+{
+    NSString *soundPath=[[NSBundle mainBundle] pathForResource:@"Car_Crash" ofType:@"aiff"];
+    NSURL *soundURL = [[NSURL alloc] initFileURLWithPath:soundPath];
+    self.crash = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    BOOL soundStatus=[self.crash prepareToPlay];
+    NSLog(@"Sound in file %@",soundPath);
+    NSLog(@"soundStatus=%d",soundStatus);
+
+    soundPath=[[NSBundle mainBundle] pathForResource:@"door" ofType:@"wav"];
+    soundURL = [[NSURL alloc] initFileURLWithPath:soundPath];
+    self.door = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    soundStatus=[self.door prepareToPlay];
+    NSLog(@"Sound in file %@",soundPath);
+    NSLog(@"soundStatus=%d",soundStatus);
+
 }
 
 - (BOOL) sold
@@ -105,12 +120,13 @@
         [UIView animateWithDuration:1.0 delay:0 options: UIViewAnimationOptionTransitionNone animations:^{
             self.soldView.frame=CGRectMake(50, 6, 100, 100);
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+            [self.door play];
+            [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
                 self.totalTransform=CGAffineTransformMakeRotation(M_PI/4);
                 [UIView setAnimationRepeatCount:3.5];
                 [self.soldView setTransform:self.totalTransform];
             } completion:^(BOOL finished) {
-                [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+                [UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
                     self.totalTransform=CGAffineTransformMakeRotation(M_PI/7);
                     [self.soldView setTransform:self.totalTransform];
                 }completion:^(BOOL finished) {
